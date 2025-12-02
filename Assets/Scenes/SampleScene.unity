@@ -571,6 +571,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323685951}
   m_CullTransparentMesh: 1
+--- !u!1 &325709094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 325709097}
+  - component: {fileID: 325709096}
+  - component: {fileID: 325709095}
+  m_Layer: 0
+  m_Name: EnemySpawnArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &325709095
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325709094}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.3008156, y: 0.33237913, z: 2.3013487}
+  m_Center: {x: 0.009891719, y: 0.16089125, z: 0.015574571}
+--- !u!114 &325709096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325709094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382d7ca3ff64d124b98abb32bd9b73ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawnArea
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 8
+  maxTries: 20
+--- !u!4 &325709097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325709094}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 8.5165, y: 8.5165, z: 8.5165}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,7 +1066,7 @@ GameObject:
   - component: {fileID: 609487238}
   - component: {fileID: 609487237}
   - component: {fileID: 609487236}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1327,7 +1397,7 @@ GameObject:
   - component: {fileID: 1011759799}
   - component: {fileID: 1011759798}
   - component: {fileID: 1011759797}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1578,6 +1648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5578d74765d5ff74c8293d63ae8e1e59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
+  spawnArea: {fileID: 325709096}
 --- !u!4 &1116696143
 Transform:
   m_ObjectHideFlags: 0
@@ -1960,7 +2031,7 @@ GameObject:
   - component: {fileID: 1565896659}
   - component: {fileID: 1565896658}
   - component: {fileID: 1565896657}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2164,7 +2235,7 @@ Transform:
   m_GameObject: {fileID: 1633006642}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.90038, y: 0, z: -4.35914}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 20, y: 0.10766, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2183,7 +2254,7 @@ GameObject:
   - component: {fileID: 1699330308}
   - component: {fileID: 1699330307}
   - component: {fileID: 1699330306}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2608,5 +2679,6 @@ SceneRoots:
   - {fileID: 128349015}
   - {fileID: 1116696143}
   - {fileID: 2104640306}
+  - {fileID: 325709097}
   - {fileID: 1107222462}
   - {fileID: 1215252424}

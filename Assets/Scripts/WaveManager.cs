@@ -12,6 +12,9 @@ public class WaveManager : MonoBehaviour
     public event Action<int> OnWaveChanged;
     public event Action<int> OnEnemyCountChanged;
 
+    public EnemySpawnArea spawnArea;
+
+
     private void Awake()
     {
         Instance = this;
@@ -68,12 +71,15 @@ public class WaveManager : MonoBehaviour
 
     private void SpawnWave(int count)
     {
+
         activeEnemies = count;
 
         for (int i = 0; i < count; i++)
         {
             Enemy enemy = ObjectPool.Instance.GetRandomEnemy();
-            enemy.SpawnRandomPosition();
+            // enemy.SpawnRandomPosition();
+            enemy.SpawnAt(spawnArea.GetValidSpawnPoint());
+
         }
 
         OnEnemyCountChanged?.Invoke(activeEnemies);

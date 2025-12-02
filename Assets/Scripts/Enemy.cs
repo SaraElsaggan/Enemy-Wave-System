@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public int typeId;
@@ -8,15 +9,10 @@ public class Enemy : MonoBehaviour
         // return to default state (HP, color, behavior, etc.)
     }
 
-    public void SpawnRandomPosition()
+    public void SpawnAt(Vector3 pos)
     {
-        Vector3 pos = new Vector3(
-            Random.Range(-8f, 8f),
-            0f,
-            Random.Range(-8f, 8f)
-        );
-
         transform.position = pos;
+        gameObject.SetActive(true);
     }
 
     public void Die()
