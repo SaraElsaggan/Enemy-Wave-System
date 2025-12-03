@@ -71,19 +71,23 @@ public class WaveManager : MonoBehaviour
 
     private void SpawnWave(int count)
     {
+        // شغّلي المنطقة قبل السبون
+        spawnArea.gameObject.SetActive(true);
 
         activeEnemies = count;
 
         for (int i = 0; i < count; i++)
         {
             Enemy enemy = ObjectPool.Instance.GetRandomEnemy();
-            // enemy.SpawnRandomPosition();
             enemy.SpawnAt(spawnArea.GetValidSpawnPoint());
-
         }
+
+        // بعد ما خلّصت Spawn، أقفّل المنطقة
+        spawnArea.gameObject.SetActive(false);
 
         OnEnemyCountChanged?.Invoke(activeEnemies);
     }
+
 
     public void NotifyEnemyDead(Enemy enemy)
     {

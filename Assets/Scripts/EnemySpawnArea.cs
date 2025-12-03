@@ -14,6 +14,7 @@ public class EnemySpawnArea : MonoBehaviour
 
     public Vector3 GetValidSpawnPoint()
     {
+        
         for (int i = 0; i < maxTries; i++)
         {
             Vector3 randomPoint = GetRandomPointInside();
