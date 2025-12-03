@@ -2,11 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
+
     public int typeId;
 
     public void ResetEnemy()
     {
-        // return to default state (HP, color, behavior, etc.)
     }
 
     public void SpawnAt(Vector3 pos)

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 public class ObjectPool : MonoBehaviour
 {
+    
     public static ObjectPool Instance;
 
     public List<Enemy> enemyPrefabs;
